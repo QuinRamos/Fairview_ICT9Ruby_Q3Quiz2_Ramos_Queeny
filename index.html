@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<title>Q3Q2</title>
+</head>
+<body>
+	<style>
+              body {
+                background-image: url(https://c.stocksy.com/a/4bB200/z9/521238.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: fixed;
+              }
+
+              p {
+              	 background: floralwhite;
+                 padding: 10px;
+                 border-radius: 10px;
+                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                 color: black;
+              }
+
+              details {
+              	background: floralwhite;
+              	margin: 50px;
+                 padding: 10px;
+                 border-radius: 10px;
+                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                 color: black;
+              }
+    </style>
+    
+    <br>
+
+    <p style="font-family: cursive; font-size: xx-large; text-align: center;">Valentine Villanelle Viewing Tickets</p>
+
+    <details ontoggle="info()">
+        <summary style="text-align: center;">Personal Information</summary>
+               <label>Complete Name:</label>
+                <input type="text" class="form-control" id="name">
+               
+                <br>
+
+                <label>Email Address:</label>
+                <input type="text" class="form-control">
+
+                <br>
+
+    <center><button type="Submit" class="btn btn-danger" onclick="personal()">Submit Form</button></form></center>
+
+    <script>
+    	function personal(){
+    		var name= document.getElementById("name").value;
+    		window.alert("Thank you for submitting, " + name);
+    	}
+   	    
+   	</script>
+
+        <i id="appear"></i>
+        <br>
+        </details> 
+    </script>
+
+    <br>
+
+    <details>
+        <summary style="text-align: center;">Ticket Price</summary>
+             
+    <label>Viewing Seat:</label>
+     <select class="form-select" id="seatType">
+      <option value="none">Choose your viewing seat...</option>
+      <option value="315">V.I.P. (PHP 315)</option>
+      <option value="260">Front Row (PHP 260)</option>
+      <option value="230">Middle Row (PHP 230)</option>
+      <option value="200">Back Row (PHP 200)</option>
+</select>
+
+<br>
+
+     <label>Ticket Type:</label>
+     <select class="form-select" id="ticketType">
+      <option value="none">Choose your ticket type...</option>
+      <option value="1">Regular (regular price)</option>
+      <option value="0.8">Student (20% off)</option>
+      <option value="0.7">Senior/PWD (30% off)</option>
+</select>
+
+<br>
+
+     <label>Do you also want to avail a meet and greet slot with the Villanelles' authors?</label>
+     <select class="form-select" id="meetGreet">
+      <option value="none">Choose</option>
+      <option value="50">Yes (additional PHP 50)</option>
+      <option value="0">No</option>
+</select>
+
+        <br>
+
+        <center><button type="button" class="btn btn-danger" onclick="calculate()" id="calculateButton">Calculate Ticket</button></center>
+
+    </details>
+
+    <script>
+    	function calculate(){
+    		// select the seat with price as stated
+    		var seatType = document.getElementById("seatType").value;
+    		var meetGreet = document.getElementById("meetGreet").value;
+    		var ticketType = document.getElementById("ticketType").value;
+
+   if ( seatType === "none"|| ticketType === "none" || meetGreet === "none"){ window.alert("Please choose an applicable seat, slot, and ticket type."); return;
+         }
+         
+
+    	//values
+    	seatType = Number(seatType); 
+    	meetGreet = Number(meetGreet);
+    	ticketType = Number (ticketType);
+
+    	// calculate
+    	var total = (seatType * ticketType) + meetGreet;
+
+    	// display total in an alert message
+    	window.alert("Your ticket's total price is PHP " + total.toFixed(2));} 
+
+    </script>
+    
+    <br>
+
+    <details ontoggle="type()">
+        <summary style="text-align: center;">Print Ticket</summary>
+
+        <br>
+
+        <center><img src="https://www.shutterstock.com/image-vector/valentine-vintage-ticket-template-retro-600nw-2246294527.jpg" height="150px" width="350px"></center>
+  
+        <i id="appear3"></i>
+        <br>
+
+        <center><button type="Submit" class="btn btn-danger" onclick="ticket()" id="ticket">Book Ticket</button></form></center>
+
+    <script>
+    	function ticket(){
+    		var type= document.getElementById("ticket").value;
+    		window.alert("Thank you for booking a ticket. Please check your email for further details.");
+    	}
+   	    
+   	</script>
+    </details>
+
+    <br><br><br><br><br><br>
+
+   <center><a class="btn btn-danger" href="index.html" style="font-size: 15px;">Book Another Ticket</a></center>
+
+   <br><br>
+
+   <center><b style="font-size: x-large; font-family: monospace;">Queeny Haraj Ramos</b></center>
+
+
+</body>
+</html>
